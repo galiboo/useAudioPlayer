@@ -34,7 +34,7 @@ export interface AudioPlayerState {
 }
 
 export const initialState: AudioPlayerState = {
-    loading: true,
+    loading: false,
     playing: false,
     stopped: true,
     ended: false,
