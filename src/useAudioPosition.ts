@@ -1,6 +1,5 @@
 import { useCallback, useContext, useEffect, useMemo, useRef } from "react"
 import { playerContext, positionContext } from "./context"
-import { Howl } from "howler"
 import useIsomorphicLayoutEffect from "./useIsomorphicLayout"
 
 interface UseAudioPositionConfig {
@@ -67,8 +66,7 @@ export const useAudioPosition = (
 
             // it appears that howler returns the Howl object when seek is given a position
             // to get the latest potion you must call seek again with no parameters
-            const result = player.seek(position) as Howl
-            const updatedPos = result.seek() as number
+            const updatedPos = player.seek(position)
             setPosition(updatedPos)
             return updatedPos
         },
